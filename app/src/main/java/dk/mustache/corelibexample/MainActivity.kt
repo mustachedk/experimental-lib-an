@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity(), LocationUtil.LocationChangedCallback {
             "Test Button"
         )
 
-        var binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        var binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         binding.del = this
     }
 
@@ -45,11 +46,15 @@ class MainActivity : AppCompatActivity(), LocationUtil.LocationChangedCallback {
         locationUtil?.stopLocationUpdates()
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         when (requestCode) {
             RC_ACCESS_FINE_LOCATION -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    if(hasPermission(this, ACCESS_FINE_LOCATION)) {
+                    if (hasPermission(this, ACCESS_FINE_LOCATION)) {
                         /** User granted location permission */
                     } else {
                         /** We don't have the location permission */
@@ -64,4 +69,18 @@ class MainActivity : AppCompatActivity(), LocationUtil.LocationChangedCallback {
     override fun locationChanged(location: Location) {
         currentLocation = location
     }
+
+    fun buttonOneMethod() {
+        Log.d("TEST", "buttonOneMethod: ")
+    }
+
+    fun buttonTwoMethod() {
+        Log.d("TEST", "buttonTwoMethod: ")
+    }
+
+    fun buttonThreeMethod() {
+        Log.d("TEST", "buttonThreeMethod: ")
+    }
 }
+
+

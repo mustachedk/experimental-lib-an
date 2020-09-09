@@ -5,12 +5,10 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import dk.mustache.corelib.utils.LocationUtil
-import dk.mustache.corelib.utils.RC_ACCESS_FINE_LOCATION
-import dk.mustache.corelib.utils.hasPermission
-import dk.mustache.corelib.utils.requestPermissionWithRationale
+import dk.mustache.corelib.utils.*
 import dk.mustache.corelibexample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), LocationUtil.LocationChangedCallback {
@@ -70,16 +68,21 @@ class MainActivity : AppCompatActivity(), LocationUtil.LocationChangedCallback {
         currentLocation = location
     }
 
-    fun buttonOneMethod() {
-        Log.d("TEST", "buttonOneMethod: ")
+    fun buttonOneMethod(view : View) {
+        Log.d("TEST", "getVisibleKeyboardHeight: " + getVisibleKeyboardHeight(view))
     }
 
-    fun buttonTwoMethod() {
-        Log.d("TEST", "buttonTwoMethod: ")
+    fun buttonTwoMethod(view : View) {
+        Log.d("TEST", "isKeyboardVisible: " + isKeyboardVisible(view))
     }
 
-    fun buttonThreeMethod() {
-        Log.d("TEST", "buttonThreeMethod: ")
+    fun buttonThreeMethod(view : View) {
+        Log.d("TEST", "show/hide keyboard: ")
+        if (isKeyboardVisible(view)) {
+            hideKeyboard(view)
+        } else {
+            showKeyboard(view)
+        }
     }
 }
 

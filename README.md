@@ -1,6 +1,6 @@
-# Mustache Core Library for Android
+# Mustache Experimental Library for Android
 
-[![](https://jitpack.io/v/mustachedk/core-lib-an.svg)](https://jitpack.io/#mustachedk/core-lib-an)
+[![](https://jitpack.io/v/mustachedk/core-lib-an.svg)](https://jitpack.io/#mustachedk/experimental-lib-an)
 
 ###### Add this to your root build.gradle
 ```bash
@@ -14,26 +14,15 @@ allprojects {
 ###### Add this to your root build.gradle
 ```bash
 dependencies {
-  implementation 'com.github.mustachedk:core-lib-an:0.2.1'
+  implementation 'com.github.mustachedk:experimental-lib-an:0.0.1'
 }
 ```
 
 #### Currently Contains:
 ##### Utilities
-* TaskHandler
-* NavigationBar
-* InternetConnection
-* LocationUtil
-* NetworkUtil
-* PermissionUtil
-* PixelUtil
-* ScreenUtil
-* ValidateUtil
-* ViewUtil
+* KeyboardUtil
 
 ##### Views
-* OneClickButton
+
 
 ##### Base Classes:
-* DataBindingAdapter (DataBindingViewHolder)
-* SectionHeaderListAdapter
